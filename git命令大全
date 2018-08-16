@@ -1,0 +1,11 @@
+提交代码流程
+  1.打开 xx文件夹
+  2.运行git bash here
+  3. git clone https://...
+  4. cd xx
+  5. 复制代码到xx文件夹
+  6. git add .
+  7. git commit -m "First commit"
+  8  git push origin master
+  9. 输入账户名及密码
+  
