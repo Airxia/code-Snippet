@@ -1,0 +1,19 @@
+/**
+     * @Desc :  切分list为多个固定长度的list集合
+     * @Author : weitong
+     * @Params: list,进入该方法之前就对list做判空处理
+     * @Return: List<ArrayList<MistakeCorrectionPojo>>
+     * @Date : 2018-08-09
+     */
+	private static List<ArrayList<MistakeCorrectionPojo>> groupListByQuantity(List<MistakeCorrectionPojo> list, int quantity) {
+        if (quantity <= 0) {
+            new IllegalArgumentException("Wrong quantity.");
+        }
+        List<ArrayList<MistakeCorrectionPojo>> wrapList = new ArrayList<ArrayList<MistakeCorrectionPojo>> ();
+        int count = 0;
+        while (count < list.size()) {
+            wrapList.add(new ArrayList<MistakeCorrectionPojo>(list.subList(count, (count + quantity) > list.size() ? list.size() : count + quantity)));
+            count += quantity;
+        }       
+        return wrapList;
+    }
